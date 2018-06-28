@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
+const phraseUl = document.querySelector('#phrase ul')
 let missed = 0;
 const overlay = document.getElementById('overlay');
 const reset = document.getElementsByClassName('btn__reset')[0];
@@ -19,21 +20,31 @@ reset.addEventListener('click', (event) => {
  }
 });
 
-function getRandomPhraseAsArray() {
-  for(let i = 0; i < phrases.length; i += 1) {
-   let randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+function getRandomPhraseAsArray(arr) {
+  for(let i = 0; i < arr.length; i += 1) {
+   let randomPhrase = phrases[Math.floor(Math.random() * arr.length)];
    let splitString = randomPhrase.split("");
    console.log(splitString);
    return splitString;
  }
 }
-getRandomPhraseAsArray();
+getRandomPhraseAsArray(phrases);
 
-function addPhraseToDisplay() {
-  
+const phraseArray = getRandomPhraseAsArray(phrases);
+
+function addPhraseToDisplay(arr) {
+  for(let i = 0; i < arr.length; i += 1) {
+    let li = document.createElement('li');
+    li.textContent = arr[i];
+    phraseUl.appendChild(li);
+    if(arr[i] == ' ') {
+      li.className = ' ';
+    } else {
+    li.className = 'letter';
+    }
+  }
 }
-addPhraseToDisplay();
-
+addPhraseToDisplay(phraseArray);
 
 
 
