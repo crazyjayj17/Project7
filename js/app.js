@@ -38,15 +38,17 @@ function addPhraseToDisplay(arr) {
     li.textContent = arr[i];
     phraseUl.appendChild(li);
     if(arr[i] == ' ') {
-      li.className = ' ';
+     li.className = 'space';
     } else {
-    li.className = 'letter';
+     li.className = 'letter';
     }
   }
 }
 addPhraseToDisplay(phraseArray);
 
+function checkLetter() {
 
+}
 
 
 
