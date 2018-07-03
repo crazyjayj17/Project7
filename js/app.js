@@ -48,7 +48,6 @@ function addPhraseToDisplay(arr) {
      li.className = 'letter';
     }
   }
-
 }
 addPhraseToDisplay(phraseArray);
 
@@ -62,22 +61,11 @@ function checkLetter(but) {
   }
 }
 
-// button.addEventListener('click', () => {
-//   //if(event.target.tagName == 'BUTTON') {
-//     for(let i = 0; i < button.length; i += 1) {
-//      button[i].style.background = 'green';
-//      // but.className = 'chosen';
-//     }
-//   //}
-// });
-
 buttons.addEventListener('click', (event) => {
-
-    for(let i = 0; i < buttons.length; i += 1) {
+   for(let i = 0; i < buttons.length; i += 1) {
       buttons[i].style.background = 'green';
       buttons[i].className = 'chosen';
     }
-
 });
 
 
